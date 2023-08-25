@@ -1,0 +1,23 @@
+steps:
+- bbbcdownload:
+    in:
+      name: BBBC001
+      outDir: '&inpDirfilerenaming'
+- subdirectory:
+    in:
+      directory: '*inpDirfilerenaming'
+      glob_pattern: inpDirfilerenaming/BBBC/BBBC001/raw/Images/  # NOTE: inpDirfilerenaming temporary workaround
+      subdirectory: '&subdirectory'
+- filerenaming:
+    in:
+      filePattern: .*_{row:c}{col:dd}f{f:dd}d{channel:d}.tif
+      inpDir: '*subdirectory'
+      mapDirectory: raw
+      outDir: '&inpDiromeconverter'
+      outFilePattern: x{row:dd}_y{col:dd}_p{f:dd}_c{channel:d}.tif
+- omeconverter:
+    in:
+      fileExtension: .ome.tif
+      filePattern: .*.tif
+      inpDir: '*inpDiromeconverter'
+      outDir: /home/ec2-user/WIC/stand_share/outdir/BBBC001/Images

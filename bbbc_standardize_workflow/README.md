@@ -63,7 +63,7 @@ The status of the workflow for the datasets
 | BBBC054         | Working                                                                                           |No ground truth images   |
 
 ## How to use
-Fork the WIC repository[Camilo's branch](https://github.com/camilovelezr/workflow-inference-compiler/tree/viz)
+Fork the WIC repository [Camilo's branch](https://github.com/camilovelezr/workflow-inference-compiler/tree/viz)
 For the polus plugins repository [bbbc_download branch](https://github.com/saketprem/polus-plugins)
 
 Install both the repositories as python packege using pip install
@@ -82,4 +82,13 @@ This plugin takes 2 input arguments:
 
 Example of how to run:
 `python run.py --name='BBBC001' --mapDirectory='raw'`
+
+## To run the worklow as a 3 step workflow
+fork and clone the [WIC](https://github.com/PolusAI/workflow-inference-compiler) repository from the polusAI repo.
+Follow the instructions to install WIC as provided in readme of WIC
+fork and clone the [mmworkflow](https://github.com/PolusAI/mm-workflows) repo ans install it using pip
+Copy the bbbcdownload.cwl, filerenaming.cwl, omeconverter.cwl into the cwl adapters folder in WIC
+copy the BBBC004.yml from the bbbc_standardize_workflow folder into the main directory of WIC
+Finally run this command
+wic --yaml /home/ec2-user/WIC/workflow-inference-compiler_main/BBBC004.yml --run_local
 
