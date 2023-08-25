@@ -27,6 +27,7 @@ import logging
 import polus.plugins as pp
 from wic.api import Step, Workflow
 
+logger = logging.getLogger(__name__)
 ROOT_PATH = Path(__file__).parent.absolute()
 
 # Initialize the logger
@@ -79,7 +80,7 @@ pp.submit_plugin(
 
 
 pp.refresh()
-print(pp.list)
+logger.info(f"{pp.list}")
 app = typer.Typer()
 
 # # # generate cwl clt
@@ -90,8 +91,6 @@ pp.OmeConverter.save_cwl(ROOT_PATH.with_name("omeconverter.cwl"))
 bbbcdownload=Step(ROOT_PATH.with_name("bbbcdownload.cwl"))
 filerenaming = Step(ROOT_PATH.with_name("filerenaming.cwl"))
 omeconverter = Step(ROOT_PATH.with_name("omeconverter.cwl"))
-filerenaming1 = Step(ROOT_PATH.with_name("filerenaming.cwl"))
-omeconverter1 = Step(ROOT_PATH.with_name("omeconverter.cwl"))
 
 class dataset(pydantic.BaseModel):
     """Class that contains name of the dataset and the standardize function"""
@@ -140,7 +139,7 @@ class dataset(pydantic.BaseModel):
             else:
                 return dataset(name=name)
         except ValueError as e:
-            print(e)
+            logger.info(f"{e}")
 
             return None
 
@@ -151,7 +150,7 @@ class dataset(pydantic.BaseModel):
             image_path: Path to the images that need to be converted
             file_pattern: input file format.
         """
-        print("removing excess channels")
+        logger.info(f"Removing excess channels")
         folders=[folders for folders in image_path.iterdir() if folders.is_dir()]
         image_pattern=file_pattern[1:]
         if(len(folders)==0):
@@ -198,7 +197,7 @@ class dataset(pydantic.BaseModel):
                 wf1.compile()
             
             except Exception as e:
-                print(f"Warning occured: {e}")
+                logger.info(f"Warning occured: {e}")
             wf1.run()
             
             # p1=pp.BbbcDownload
@@ -228,7 +227,7 @@ class dataset(pydantic.BaseModel):
             wf1.compile()
         
         except Exception as e:
-            print(f"Warning occured: {e}")
+            logger.info(f"Warning occured: {e}")
         os.chdir(omeconverter.outDir.value.parent)
         wf1.run()
 
@@ -260,7 +259,7 @@ class DIB_image(dataset):
                 wf1.compile()
             
             except Exception as e:
-                print(f"Warning occured: {e}")
+                logger.info(f"Warning occured: {e}")
             wf1.run()
 
 
@@ -280,7 +279,7 @@ class DIB_image(dataset):
             wf1.compile()
         
         except Exception as e:
-            print(f"Warning occured: {e}")
+            logger.info(f"Warning occured: {e}")
         os.chdir(filerenaming.outDir.value.parent)
         wf1.run()
 
@@ -315,7 +314,7 @@ class dataWithGroundTruth(dataset):
                 wf1.compile()
             
             except Exception as e:
-                print(f"Warning occured: {e}")
+                logger.info(f"Warning occured: {e}")
             wf1.run()
 
         for i in data:
@@ -352,7 +351,7 @@ class dataWithGroundTruth(dataset):
                 wf1.compile()
             
             except Exception as e:
-                print(f"Warning occured: {e}")
+                logger.info(f"Warning occured: {e}")
             os.chdir(omeconverter.outDir.value.parent)
             wf1.run()
 
