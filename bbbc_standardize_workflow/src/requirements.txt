@@ -1,0 +1,6 @@
+polus==0.1.8
+pydantic==1.10.11
+skimage==0.0
+typer==0.9.0
+workflow_inference_compiler==0.post0.dev354
+workflow_inference_compiler.egg==info

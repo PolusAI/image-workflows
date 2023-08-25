@@ -1,0 +1,278 @@
+[
+    {
+        "name": "BBBC001",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*_{row:c}{col:dd}f{f:dd}d{channel:d}.tif",
+        "rename_outFilePattern": "x{row:dd}_y{col:dd}_p{f:dd}_c{channel:d}.tif"
+    },
+    {
+        "name": "BBBC006",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*{row:c}{col:dd}_s{s:d}_w{w:d}.*.tif",
+        "rename_outFilePattern": "x{row:dd}_y{col:dd}_p{s:dd}_c{w:dd}.tif"
+    },
+    {
+        "name": "BBBC030",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": "cho{p:dd}.png",
+        "rename_outFilePattern": "x01_y01_p{p:dd}_c1.png"
+    },
+    {
+        "name": "BBBC004",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{p:d+}.*.tif",
+        "rename_outFilePattern": "x01_y01_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC003",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{t:d}_{x:dd}_M{y:d}{e:c}{p:d+}.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_t{t:dd}.tif"
+    },
+    {
+        "name": "BBBC005",
+        "ome_filePattern": ".*.TIF",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_C{cells:d+}_F{blur:d+}_s{p:dd}_w{stain:d}.TIF",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_C{cells:dd}_F{blur:dd}_s{p:dd}_w{stain:dd}.TIF"
+    },
+    {
+        "name": "BBBC007",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_POS00{p:d+}_{channel:c}.*.tif",
+        "rename_outFilePattern": "x01_y01_p{p:dd}_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC002",
+        "ome_filePattern": ".*.TIF",
+        "rename_filePattern": ".*?_p{x:dd}{y:dd}.*.TIF",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_f00_c0.TIF"
+    },
+    {
+        "name": "BBBC008",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}f{p:dd}d{d:d}_slice{s:d}.*{channel:d}.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_s{s:dd}_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC009",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{t:d+}hr-{p:d+}.*.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_t{t:dd}.tif"
+    },
+    {
+        "name": "BBBC010",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_w{channel:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC019",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_w{channel:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC018",
+        "ome_filePattern": ".*.DIB",
+        "rename_filePattern": ".*{x:dd}{y:dd}{p:d}-{channel:c+}.*.ome.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_c{channel:dd}.ome.tif"
+    },
+    {
+        "name": "BBBC026",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_s{site:d}.*.png",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{site:dd}_c00.png"
+    },
+    {
+        "name": "BBBC027",
+        "ome_filePattern": ".*.ics",
+        "rename_filePattern": ".*_{x:dd}{y:dd}.*.ics",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c00.ics"
+    },
+    {
+        "name": "BBBC020",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_w{channel:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC028",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": "{shape:c+}-{p:dd}.png",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_s{shape:dd}.png"
+    },
+    {
+        "name": "BBBC029test",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": "{c1:c+}_.*rotation-{p:dd}_noise20.png",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_c{c1:dd}.png"
+    },
+    {
+        "name": "BBBC032",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*C{channel:d}.tif",
+        "rename_outFilePattern": "x00_y00_p00_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC033",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "C{channel:d}.tif",
+        "rename_outFilePattern": "x00_y00_p00_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC034",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{p:c+}.*C={channel:d}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_c{channel:dd}.tif"
+    },
+    {
+        "name": "BBBC035",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "t{t:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:ddd}_c00.tif"
+    },
+    {
+        "name": "BBBC038",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "t{t:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:ddd}_c00.tif"
+    },
+    {
+        "name": "BBBC039",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_s{p:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC041",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_s{p:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC042",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{p:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dddd}_c00.tif"
+    },
+    {
+        "name": "BBBC044",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_X{x:d+}_Y{y:d+}.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c00.tif"
+    },
+    {
+        "name": "BBBC045",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "{p:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dddd}_c00.tif"
+    },
+    {
+        "name": "BBBC050",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "Emb{p:d+}_t{t:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:ddd}_t{t:ddd}.tif"
+    },
+    {
+        "name": "BBBC025",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": "Emb{p:d+}_t{t:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:ddd}_t{t:ddd}.tif"
+    },
+    {
+        "name": "BBBC011",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": "{x:c}{y:dd}s.png",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c00.png"
+    },
+    {
+        "name": "BBBC012",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_w{c:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c{c:dd}.tif"
+    },
+    {
+        "name": "BBBC013",
+        "ome_filePattern": ".*.BMP",
+        "rename_filePattern": "Channel{c:d}-{p:d+}-{x:c}-{y:dd}.BMP",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_c{c:dd}.BMP"
+    },
+    {
+        "name": "BBBC014",
+        "ome_filePattern": ".*.Bmp",
+        "rename_filePattern": "Channel {c:d}-{p:d+}-{x:c}-{y:dd}.*.Bmp",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_c{c:dd}.Bmp"
+    },
+    {
+        "name": "BBBC015",
+        "ome_filePattern": ".*.JPG",
+        "rename_filePattern": "{x:dd}_{y:d}_{c:d}.*.JPG",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p00_c{c:dd}.JPG"
+    },
+    {
+        "name": "BBBC016",
+        "ome_filePattern": ".*.TIF",
+        "rename_filePattern": ".*_{x:c}{y:dd}f{f:dd}d{c:d}.*.TIF",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{f:dd}_c{c:dd}.TIF"
+    },
+    {
+        "name": "BBBC031",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": ".*?_w{x:c}{y:dd}_s{p:dd}.*_{mask:c+}.*.png",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_m{mask:dd}.png"
+    },
+    {
+        "name": "BBBC052",
+        "ome_filePattern": ".*.png",
+        "rename_filePattern": ".*?_w{x:c}{y:dd}_s{p:dd}.*_{mask:c+}.*.png",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{p:dd}_m{mask:dd}.png"
+    },
+    {
+        "name": "BBBC053",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_.*?_({p:d+}.*.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC054",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*_{p:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC048",
+        "ome_filePattern": ".*.ome.jpg",
+        "rename_filePattern": "{p:d+}_Ch{c:d}.*jpg",
+        "rename_outFilePattern": "x00_y00_p{p:ddddd}_c{c:dd}.*jpg"
+    },
+    {
+        "name": "BBBC051",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*_{p:d+}.tif",
+        "rename_outFilePattern": "x00_y00_p{p:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC017",
+        "ome_filePattern": ".*.DIB",
+        "rename_filePattern": ".*_{x:c}{y:dd}f{f:dd}d{c:d}.DIB",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{f:dd}_c{c:dd}.DIB"
+    },
+    {
+        "name": "BBBC021",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_.*?_{x:c}{y:dd}_s{s:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{s:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC022",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_s{s:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{s:dd}_c00.tif"
+    },
+    {
+        "name": "BBBC036",
+        "ome_filePattern": ".*.tif",
+        "rename_filePattern": ".*?_{x:c}{y:dd}_s{s:d}.*.tif",
+        "rename_outFilePattern": "x{x:dd}_y{y:dd}_p{s:dd}_c00.tif"
+    }
+]

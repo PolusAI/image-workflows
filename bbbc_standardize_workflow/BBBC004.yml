@@ -1,0 +1,24 @@
+steps:
+- bbbcdownload:
+    in:
+      name: BBBC004
+      outDir: '&inpDirfilerenaming'
+- subdirectory:
+    in:
+      directory: '*inpDirfilerenaming'
+      glob_pattern: inpDirfilerenaming/BBBC/BBBC004/raw/Images/  # NOTE: inpDirfilerenaming temporary workaround
+      subdirectory: '&subdirectory'
+- filerenaming:
+    in:
+      filePattern: '{p:d+}.*.tif'
+      inpDir: '*subdirectory'
+      mapDirectory: raw
+      outDir: '&inpDiromeconverter'
+      outFilePattern: x01_y01_p{p:dd}_c00.tif
+- omeconverter:
+    in:
+      fileExtension: .ome.tif
+      filePattern: .*.tif
+      inpDir: '*inpDiromeconverter'
+      outDir: /home/ec2-user/WIC/workflow-inference-compiler_main/outdir/BBBC004/Images
+
