@@ -15,7 +15,7 @@
 images=(
     polusai/bbbc-download-plugin:0.1.0-dev1
     polusai/file-renaming-plugin:0.2.1-dev0  # NOTE: 0.2.3 not pushed yet
-    polusai/ome-converter-plugin:0.3.0
+    polusai/ome-converter-plugin:0.3.2
     polusai/montage-plugin:0.5.0
     polusai/image-assembler-plugin:1.4.0-dev0
     polusai/precompute-slide-plugin:1.7.0-dev0
@@ -24,6 +24,6 @@ images=(
 for image in ${images[@]}; do
   echo "FROM ${image}" > Dockerfile_tmp
   echo "ENTRYPOINT []" >> Dockerfile_tmp
-  sudo docker build -f Dockerfile_tmp -t ${image} .
+  docker build -f Dockerfile_tmp -t ${image} .
   rm Dockerfile_tmp
 done

@@ -14,13 +14,24 @@ arguments: ["-m", "polus.plugins.formats.ome_converter"]
 
 requirements:
   DockerRequirement:
-    dockerPull: polusai/ome-converter-plugin:0.3.0
+    dockerPull: polusai/ome-converter-plugin:0.3.2
   # See https://www.commonwl.org/v1.0/CommandLineTool.html#InitialWorkDirRequirement
   InitialWorkDirRequirement:
     listing:
     - entry: $(inputs.outDir)
       writable: true  # Output directories must be writable
   InlineJavascriptRequirement: {}
+# NOTE: polusai/ome-converter-plugin:0.3.1 uses the base image
+# polusai/bfio:2.3.2 which now un-bundles the java maven package
+# ome:formats-gpl:7.1.0 due to licensing reasons.
+# To avoid requiring network access at runtime, in the bfio Dockerfile
+# it is pre-installed and saved in ~/.m2/  However, by default
+# CWL hides all environment variables (including HOME), so we need to
+# set HOME here so that at runtime we get a cache hit on the maven install.
+  EnvVarRequirement:
+# See https://www.commonwl.org/user_guide/topics/environment-variables.html
+    envDef:
+      HOME: /home/polusai
 
 inputs:
   inpDir:
