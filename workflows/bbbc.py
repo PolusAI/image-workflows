@@ -50,11 +50,10 @@ def main():
              montage,
              image_assembler,
              precompute_slide]
-    filename = 'bbbc'  # .yml
+    filename = 'bbbc_py'  # .yml
     workingdir = './'
     viz = Workflow(steps, filename, workingdir)
     viz.compile()
-    viz.run()
 
 
 if __name__ == '__main__':
