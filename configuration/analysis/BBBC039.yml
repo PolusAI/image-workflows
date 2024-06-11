@@ -1,0 +1,13 @@
+---
+name : BBBC039
+file_pattern : /.*/.*/.*/Images/.*/.*_{row:c}{col:dd}_s{s:d}_w{channel:d}.*.tif
+out_file_pattern : x{row:dd}_y{col:dd}_p{s:dd}_c{channel:d}.tif
+image_pattern: x{x:dd}_y{y:dd}_p{p:dd}_c{c:d}.ome.tif
+seg_pattern: x{x:dd}_y{y:dd}_p{p:dd}_c1.ome.tif
+ff_pattern: "x\\(00-15\\)_y\\(01-24\\)_p0\\(1-9\\)_c{c:d}_flatfield.ome.tif"
+df_pattern: "x\\(00-15\\)_y\\(01-24\\)_p0\\(1-9\\)_c{c:d}_darkfield.ome.tif"
+group_by: c
+map_directory: false
+features: "ALL_INTENSITY"
+file_extension: pandas
+background_correction: false
