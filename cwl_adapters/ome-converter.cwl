@@ -10,7 +10,7 @@ doc: |-
 
 requirements:
   DockerRequirement:
-    dockerPull: polusai/ome-converter-plugin:0.3.2-dev2
+    dockerPull: sameeul/ome-converter-tool:0.3.2-dev1
   # See https://www.commonwl.org/v1.0/CommandLineTool.html#InitialWorkDirRequirement
   InitialWorkDirRequirement:
     listing:
@@ -26,8 +26,6 @@ requirements:
 # set HOME here so that at runtime we get a cache hit on the maven install.
   EnvVarRequirement:
 # See https://www.commonwl.org/user_guide/topics/environment-variables.html
-    envDef:
-      HOME: /home/polusai
 
 inputs:
   inpDir:
