@@ -5,7 +5,7 @@ cwlVersion: v1.0
 label: OME Zarr Converter
 
 doc: |-
-  This WIPP plugin converts BioFormats supported data types to the OME Zarr file format.
+  This WIPP plugin converts BioFormats supported data types to the OME Zarr file format. 
   https://github.com/PolusAI/polus-plugins/tree/master/formats/ome-converter-plugin
 
 requirements:
