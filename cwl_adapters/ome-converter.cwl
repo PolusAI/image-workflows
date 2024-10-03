@@ -35,15 +35,6 @@ inputs:
     inputBinding:
       prefix: --filePattern
 
-  fileExtension:
-    label: The file extension
-    doc: |-
-      The file extension
-    type: string
-    inputBinding:
-      prefix: --fileExtension
-    default: "default"  # enum: .ome.tiff, .ome.zarr, default
-
   outDir:
     label: Output collection
     doc: |-
