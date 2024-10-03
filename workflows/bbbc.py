@@ -22,7 +22,6 @@ def workflow() -> Workflow:
     omeconverter = Step(clt_path='../image-workflows/cwl_adapters/ome-converter.cwl')
     omeconverter.inpDir = filerenaming.outDir
     omeconverter.filePattern = '.*.tif'
-    omeconverter.fileExtension = '.ome.tif'
     omeconverter.outDir = Path('omeconverter.outDir')
 
     montage = Step(clt_path='../image-workflows/cwl_adapters/montage.cwl')

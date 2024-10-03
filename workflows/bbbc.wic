@@ -21,7 +21,6 @@ steps:
     - outDir: !& file-renaming.outDir
   ome-converter:
     in:
-      fileExtension: !ii .ome.tif
       filePattern: !ii .*.tif
       inpDir: !* file-renaming.outDir
       outDir: !ii omeconverter.outDir
