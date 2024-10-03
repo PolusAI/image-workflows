@@ -1,0 +1,11 @@
+---
+name: BBBC001
+file_pattern: /.*/.*/.*/Images/.*/.*_{row:c}{col:dd}f{f:dd}d{channel:d}.tif
+out_file_pattern: x{row:dd}_y{col:dd}_p{f:dd}_c{channel:d}.tif
+image_pattern: x{x:dd}_y{y:dd}_p{p:dd}_c{c:d}.ome.tif
+seg_pattern: x{x:dd}_y{y:dd}_p{p:dd}_c0.ome.tif
+ff_pattern: "x00_y03_p0\\(0-5\\)_c{c:d}_flatfield.ome.tif"
+df_pattern: "x00_y03_p0\\(0-5\\)_c{c:d}_darkfield.ome.tif"
+group_by: c
+map_directory: false
+background_correction: false

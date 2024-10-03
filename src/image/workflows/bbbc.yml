@@ -1,0 +1,39 @@
+steps:
+- bbbcdownload:
+    in:
+      name: BBBC001
+      outDir: '&bbbcdownload.outDir'
+- subdirectory:
+    in:
+      directory: '*bbbcdownload.outDir'
+      glob_pattern: bbbcdownload.outDir/BBBC/BBBC001/raw/Images/human_ht29_colon_cancer_1_images/
+      subdirectory: '&subdirectory.subdirectory'
+- file-renaming:
+    in:
+      filePattern: .*_{row:c}{col:dd}f{f:dd}d{channel:d}.tif
+      inpDir: '*subdirectory.subdirectory'
+      outDir: '&file-renaming.outDir'
+      outFilePattern: x{row:dd}_y{col:dd}_p{f:dd}_c{channel:d}.tif
+- ome-converter:
+    in:
+      fileExtension: .ome.tif
+      filePattern: .*.tif
+      inpDir: '*file-renaming.outDir'
+      outDir: '&omeconverter.outDir'
+- montage:
+    in:
+      filePattern: x00_y03_p{p:dd}_c0.ome.tif
+      inpDir: '*omeconverter.outDir'
+      layout: p
+      outDir: '&montage.outDir'
+- image_assembler:
+    in:
+      imgPath: '*omeconverter.outDir'
+      outDir: '&image_assembler.outDir'
+      stitchPath: '*montage.outDir'
+- precompute_slide:
+    in:
+      imageType: image
+      inpDir: '*image_assembler.outDir'
+      outDir: precompute_slide.outDir
+      pyramidType: Zarr
