@@ -10,7 +10,7 @@ doc: |-
 
 requirements:
   DockerRequirement:
-    dockerPull: sameeul/ome-converter-tool:0.3.2-dev1
+    dockerPull: sameeul/ome-converter-plugin:0.3.2-dev3
   # See https://www.commonwl.org/v1.0/CommandLineTool.html#InitialWorkDirRequirement
   InitialWorkDirRequirement:
     listing:
