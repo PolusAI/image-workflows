@@ -45,8 +45,8 @@ def workflow() -> Workflow:
              subdirectory,
              filerenaming,
              omeconverter,
-             montage,
-             image_assembler,
+            # montage,
+            # image_assembler,
             #  precompute_slide
              ]
     filename = 'bbbc_py'  # .yml
