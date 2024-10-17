@@ -18,7 +18,7 @@ requirements:
       writable: true  # Output directories must be writable
   InlineJavascriptRequirement: {}
 
-baseCommand: ['python3', '-m', 'polus.images.formats.ome_converter']
+baseCommand: python3 -m polus.images.formats.ome_converter
 
 inputs:
   inpDir:
