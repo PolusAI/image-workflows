@@ -18,6 +18,8 @@ requirements:
       writable: true  # Output directories must be writable
   InlineJavascriptRequirement: {}
 
+baseCommand: ['python3', '-m', 'polus.images.formats.ome_converter']
+
 inputs:
   inpDir:
     label: Input generic data collection to be processed by this plugin
