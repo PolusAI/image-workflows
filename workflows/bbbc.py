@@ -35,20 +35,19 @@ def workflow() -> Workflow:
     image_assembler.imgPath = omeconverter.outDir
     image_assembler.outDir = Path('image_assembler.outDir')
 
-    # precompute_slide = Step(clt_path='../image-workflows/cwl_adapters/precompute_slide.cwl')
-    # precompute_slide.inpDir = image_assembler.outDir
-    # precompute_slide.pyramidType = 'Zarr'
-    # precompute_slide.imageType = 'image'
-    # precompute_slide.outDir = Path('precompute_slide.outDir')
+    precompute_slide = Step(clt_path='../image-workflows/cwl_adapters/precompute_slide.cwl')
+    precompute_slide.inpDir = image_assembler.outDir
+    precompute_slide.pyramidType = 'Zarr'
+    precompute_slide.imageType = 'image'
+    precompute_slide.outDir = Path('precompute_slide.outDir')
 
     steps = [bbbcdownload,
              subdirectory,
              filerenaming,
              omeconverter,
-            # montage,
-            # image_assembler,
-            #  precompute_slide
-             ]
+             montage,
+             image_assembler,
+             precompute_slide]
     filename = 'bbbc_py'  # .yml
     viz = Workflow(steps, filename)
     return viz
