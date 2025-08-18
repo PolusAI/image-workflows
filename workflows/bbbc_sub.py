@@ -1,8 +1,8 @@
 from pathlib import Path
 
 from sophios import plugins
-from sophios.api import pythonapi
-from sophios.api.pythonapi import Step, Workflow
+from sophios.apis.python import api
+from sophios.apis.python.api import Step, Workflow
 
 def workflow() -> Workflow:
     bbbcdownload = Step(clt_path='cwl_adapters/bbbcdownload.cwl')
@@ -70,7 +70,7 @@ def workflow2() -> Workflow:
 # viz.compile() # Do NOT .run() here
 
 if __name__ == '__main__':
-    pythonapi.global_config = plugins.get_tools_cwl(str(Path().home()))  # Use path fallback
+    api.global_config = plugins.get_tools_cwl(str(Path().home()))  # Use path fallback
 
     viz = workflow2()
     viz.run()  # .run() here, inside main

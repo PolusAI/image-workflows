@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from sophios.api.pythonapi import Step, Workflow
+from sophios.apis.python.api import Step, Workflow
 
 def workflow() -> Workflow:
     bbbcdownload = Step(clt_path='../image-workflows/cwl_adapters/bbbcdownload.cwl')
