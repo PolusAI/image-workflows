@@ -29,5 +29,5 @@ jobs:
           sender_repo_owner: ${{ github.repository_owner }}
           sender_repo_ref: ${{ github.ref_name }}
           commit_message: ${{ github.event.head_commit.message }}
-          target_repository: workflow-inference-compiler
+          target_repository: sophios
           access_token: ${{ steps.generate_token.outputs.token }}
