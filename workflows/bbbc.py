@@ -1,9 +1,10 @@
 from pathlib import Path
 
-from sophios.apis.python.api import Step, Workflow
+from sophios.apis.python.workflow import Step, Workflow
+
 
 def workflow() -> Workflow:
-    bbbcdownload = Step(clt_path='../image-workflows/cwl_adapters/bbbcdownload.cwl')
+    bbbcdownload = Step(clt_path='cwl_adapters/bbbcdownload.cwl')
     # NOTE: object fields monkey patched at runtime from *.cwl file
     bbbcdownload.name = 'BBBC001'
     bbbcdownload.outDir = Path('bbbcdownload.outDir')
@@ -12,30 +13,30 @@ def workflow() -> Workflow:
     subdirectory.directory = bbbcdownload.outDir
     subdirectory.glob_pattern = 'bbbcdownload.outDir/BBBC/BBBC001/raw/Images/human_ht29_colon_cancer_1_images/'
 
-    filerenaming = Step(clt_path='../image-workflows/cwl_adapters/file-renaming.cwl')
+    filerenaming = Step(clt_path='cwl_adapters/file-renaming.cwl')
     # NOTE: FilePattern {} syntax shadows python f-string {} syntax
     filerenaming.filePattern = '.*_{row:c}{col:dd}f{f:dd}d{channel:d}.tif'
     filerenaming.inpDir = subdirectory.subdirectory
     filerenaming.outDir = Path('file-renaming.outDir')
     filerenaming.outFilePattern = 'x{row:dd}_y{col:dd}_p{f:dd}_c{channel:d}.tif'
 
-    omeconverter = Step(clt_path='../image-workflows/cwl_adapters/ome-converter.cwl')
+    omeconverter = Step(clt_path='cwl_adapters/ome-converter.cwl')
     omeconverter.inpDir = filerenaming.outDir
     omeconverter.filePattern = '.*.tif'
     omeconverter.outDir = Path('omeconverter.outDir')
 
-    montage = Step(clt_path='../image-workflows/cwl_adapters/montage.cwl')
+    montage = Step(clt_path='cwl_adapters/montage.cwl')
     montage.inpDir = omeconverter.outDir
     montage.filePattern = 'x00_y03_p{p:dd}_c0.ome.tif'
     montage.layout = 'p'
     montage.outDir = Path('montage.outDir')
 
-    image_assembler = Step(clt_path='../image-workflows/cwl_adapters/image_assembler.cwl')
+    image_assembler = Step(clt_path='cwl_adapters/image_assembler.cwl')
     image_assembler.stitchPath = montage.outDir
     image_assembler.imgPath = omeconverter.outDir
     image_assembler.outDir = Path('image_assembler.outDir')
 
-    precompute_slide = Step(clt_path='../image-workflows/cwl_adapters/precompute_slide.cwl')
+    precompute_slide = Step(clt_path='cwl_adapters/precompute_slide.cwl')
     precompute_slide.inpDir = image_assembler.outDir
     precompute_slide.pyramidType = 'Zarr'
     precompute_slide.imageType = 'image'
