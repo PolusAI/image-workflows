@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from sophios.apis.python.workflow import Step, Workflow
+from sophios.api.python.workflow import Step, Workflow
 
 
 def workflow() -> Workflow:
